@@ -24,19 +24,19 @@ app.get('/api/purchase_item', db.getPurchase_item);
 app.get('/api/purchase_item/:id', db.getPurchase_itemByID);
 app.post('/api/purchase_item/insert', db.insertPurchase_item);
 app.post('/api/purchase_item/update/:id', db.updatePurchase_item);
-app.post('/api/purchase_item/delete/:id', db.DeletePurchase_item);
+app.delete('/api/purchase_item/delete/:id', db.DeletePurchase_item);
 
 app.get('/api/purchase', db.getPurchase);
 app.get('/api/purchase/:id', db.getPurchaseByID);
 app.post('/api/purchase/insert', db.insertPurchase);
 app.post('/api/purchase/update/:id', db.updatePurchase);
-app.post('/api/purchase/delete/:id', db.DeletePurchase);
+app.delete('/api/purchase/delete/:id', db.DeletePurchase);
 
 app.get('/api/User', db.getUser);
 app.get('/api/User/:id', db.getUserByID);
 app.post('/api/User/insert', db.insertUser);
 app.post('/api/User/update/:id', db.updateUser);
-app.post('/api/User/delete/:id', db.DeleteUser);
+app.delete('/api/User/delete/:id', db.DeleteUser);
 
 
 app.get('/api/json',function(req,res){

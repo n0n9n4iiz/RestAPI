@@ -88,6 +88,7 @@ function getAllProducts(req, res) {
                     })
                     }
 
+                    //purchase_item
                     function getPurchase_item(req, res) {
                         db.any('select * from purchase_items')
                             .then(function (data) {
@@ -120,7 +121,7 @@ function getAllProducts(req, res) {
                                 .json({
                                     status: 'success',
                                     data: data,
-                                    message: 'Delete id=' + req.params.id
+                                    message: 'Retrieved ALL purchase_items'
                                 });
                         })
                     }

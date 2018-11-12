@@ -224,7 +224,7 @@ function getAllProducts(req, res) {
                     
                     
                     function updatePurchase(req, res) {
-                        db.any('update purchases set created_at=${created_at},name=${name},address=${address},state=${state},zipcode=${zipcode},user_id=${user_id} where purchase_id =' + req.params.id,
+                        db.any('update purchases set created_at=${created_at},name=${name},address=${address},state=${state},zipcode=${zipcode},id=${id} where purchase_id =' + req.params.id,
                             req.body)
                             .then(function (data) {
                                 res.status(200).json({
@@ -239,8 +239,8 @@ function getAllProducts(req, res) {
                     }
                     
                     function insertPurchase(req, res) {
-                        db.any('insert into purchases(purchase_id,created_at,name,address,state,zipcode,user_id)' +
-                            'values(${purchase_id}, ${created_at}, ${name}, ${address}, ${state},${zipcode},${user_id})',
+                        db.any('insert into purchases(purchase_id,created_at,name,address,state,zipcode,id)' +
+                            'values(${purchase_id}, ${created_at}, ${name}, ${address}, ${state},${zipcode},${id})',
                             req.body)
                             .then(function (data) {
                                 res.status(200)
@@ -299,7 +299,7 @@ function getAllProducts(req, res) {
                     }
                     
                     function DeleteUser(req, res) {
-                        db.any('DELETE from users where user_id=' + req.params.id)
+                        db.any('DELETE from users where id=' + req.params.id)
                             .then(function (data) {
                                 res.status(200)
                                     .json({
@@ -322,7 +322,7 @@ function getAllProducts(req, res) {
                     
                     
                     function updateUser(req, res) {
-                        db.any('update users set email=${email},password=${password},details=${details},created_at=${created_at} where user_id =' + req.params.id,
+                        db.any('update users set email=${email},password=${password},details=${details},created_at=${created_at} where id =' + req.params.id,
                             req.body)
                             .then(function (data) {
                                 res.status(200).json({
@@ -337,8 +337,8 @@ function getAllProducts(req, res) {
                     }
                     
                     function insertUser(req, res) {
-                        db.any('insert into users(user_id,email,password,details,created_at)' +
-                            'values(${user_id}, ${email}, ${password}, ${details}, ${created_at}',
+                        db.any('insert into users(id,email,password,details,created_at)' +
+                            'values(${id}, ${email}, ${password}, ${details}, ${created_at}',
                             req.body)
                             .then(function (data) {
                                 res.status(200)
@@ -363,7 +363,7 @@ function getAllProducts(req, res) {
                     
                     
                     function getUserByID(req, res) {
-                        db.any('select * from users where user_id =' + req.params.id)
+                        db.any('select * from users where id =' + req.params.id)
                             .then(function (data) {
                                 res.status(200)
                                     .json({

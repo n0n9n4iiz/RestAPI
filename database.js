@@ -257,7 +257,7 @@ function getAllProducts(req, res) {
                         db.any('select * from purchases').then(function (data) {
                             res.status(200)
                                 .json({
-                                    status: 'success',
+                                    status: 'success!',
                                     data: data,
                                     message: 'Delete id=' + req.params.id
                                 });

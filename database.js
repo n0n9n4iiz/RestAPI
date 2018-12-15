@@ -24,7 +24,7 @@ function getAllProducts(req, res) {
     }
 //SELECT BY ID
     function getProductByID(req, res) {
-        db.any('select * from products where id =' + req.params.id)
+        db.any('select * from products where product_id =' + req.params.id)
         .then(function (data) {
         res.status(200)
         .json({
